@@ -36,6 +36,14 @@ AWS_SECRET_ACCESS_KEY=test
 REGION=ap-northeast-2
 ```
 2. aws configure
+```text
+예시 입력
+
+AWS Access Key ID [None]: test
+AWS Secret Access Key [None]: test
+Default region name [None]: ap-northeast-2
+Default output format [None]: json
+```
 
 ### API 전송 (예시 SSM ParameterStore)
 1. paramter 생성
