@@ -90,21 +90,6 @@ public class LocalStackContainer{
         }
     }
 
-    private String resolveHostName() {
-        try {
-            // resolve IP address and use that as the endpoint so that path-style access is automatically used for S3
-            String ipAddress = InetAddress.getByName(DEFAULT_HOST_NAME).getHostAddress();
-            String DEFAULT_EDGE_PORT = "4566";
-            return new URI("http://" +
-                    ipAddress +
-                    ":" +
-                    DEFAULT_EDGE_PORT).toString();
-        } catch (UnknownHostException | URISyntaxException e) {
-            throw new IllegalStateException("Cannot obtain endpoint URL", e);
-        }
-    }
-
-
     public enum Service {
         API_GATEWAY("apigateway"),
         EC2("ec2"),
