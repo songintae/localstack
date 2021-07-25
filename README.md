@@ -18,7 +18,40 @@ testcontainers 의존성을 주입 받음으로써 Junit 환경에서 Container�
 2. 공식 문서
  - https://github.com/localstack/localstack
  - https://github.com/localstack/localstack-java-utils
-   
+
+
+## AWS CLI로 localstack 확인 방법
+
+### aws cli 설치
+https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/install-cliv2-mac.html
+    
+### credentials 설정    
+https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-configure-files.html
+
+1. ~/.aws/credentials에 설정
+```text
+[default]
+AWS_ACCESS_KEY_ID=test
+AWS_SECRET_ACCESS_KEY=test
+REGION=ap-northeast-2
+```
+2. aws configure
+
+### API 전송 (예시 SSM ParameterStore)
+1. paramter 생성
+```text
+aws ssm put-parameter --endpoint-url http://localhost:4566 \
+--name "parameter" \
+--type "String" \
+--value "1" \
+--overwrite
+```
+
+2. parameter 검색
+```text
+aws ssm get-parameter --endpoint-url http://localhost:4566 \
+--name "parameter"
+```
 
 
 
