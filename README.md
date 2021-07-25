@@ -13,9 +13,9 @@ testcontainers 의존성을 주입 받음으로써 Junit 환경에서 Container�
  - Jupiter / JUnit 5 환경의 테스트 통합 : https://www.testcontainers.org/test_framework_integration/junit_5/
  - localstack 활용 예제 : https://www.testcontainers.org/modules/localstack/
 
-## localstack을 이용한 AWS 통합 테스트 환경 구축
+## localstack을 이용한 local AWS 통합 테스트 환경 구축 (docker 및 AWS 접근 클래스 직접 구현)
 1. container 접근을 위한 클래스 : LocalstackContainer
-2. 공식 문서
+2. 참고 문서
  - https://github.com/localstack/localstack
  - https://github.com/localstack/localstack-java-utils
 
