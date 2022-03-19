@@ -19,7 +19,7 @@ public class AwsConfiguration {
     @Bean(destroyMethod = "shutdown")
     public AmazonS3 amazonS3() {
         return AmazonS3ClientBuilder.standard()
-                .withEndpointConfiguration(localStackContainer.getEndpointConfiguration(LocalStackContainer.Service.S3))
+                .withEndpointConfiguration(localStackContainer.getEndpointConfiguration())
                 .withCredentials(localStackContainer.getDefaultCredentialsProvider())
                 .build();
     }
@@ -27,7 +27,7 @@ public class AwsConfiguration {
     @Bean(destroyMethod = "shutdown")
     public AWSSimpleSystemsManagement awsSimpleSystemsManagement() {
         return AWSSimpleSystemsManagementClientBuilder.standard()
-                .withEndpointConfiguration(localStackContainer.getEndpointConfiguration(LocalStackContainer.Service.SSM))
+                .withEndpointConfiguration(localStackContainer.getEndpointConfiguration())
                 .withCredentials(localStackContainer.getDefaultCredentialsProvider())
                 .build();
     }

@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '11'
 
 configurations {
     compileOnly {
@@ -27,6 +27,7 @@ dependencies {
     implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.1000')
     implementation 'com.amazonaws:aws-java-sdk-s3'
     implementation 'com.amazonaws:aws-java-sdk-ssm'
+
 
 
     testImplementation 'org.testcontainers:junit-jupiter'
